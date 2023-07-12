@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  mongo-container:
+    image: mongo:4.4.19
+    ports:
+      - "27017:27017"
+    volumes:
+        # if you wish to setup additional user accounts specific per DB or with different roles you can use following entry point
+      - ./mongo-db:/data/db
+      - ./app_data:/app_data
+    command: mongod
+
