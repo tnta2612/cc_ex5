@@ -23,7 +23,8 @@ async function main(params) {
             return {"product_price": result.product_price};
         } catch (err) {
             console.log("err", err);
-            return {"product_price_err": "error, check logs"};
+            return {"product_price_err": err};
+           // return {"product_price_err": "error, check logs"};
         } // catch any mongo error here
         finally {
             client.close();

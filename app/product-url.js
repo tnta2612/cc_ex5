@@ -22,7 +22,8 @@ async function main(params) {
             return {"product_url": result.product_url};
         } catch (err) {
             console.log("err", err);
-            return {"product_url_err": "error, check logs"};
+            return {"product_url_err": err};
+            //return {"product_url_err": "error, check logs"};
         } // catch any mongo error here
         finally {
             client.close();
